@@ -7,7 +7,7 @@ from homework_02 import engine
 
 
 class Car(base.Vehicle):
-    engine = engine.Engine(5, 10)
+    engine = None
 
     def set_engine(self,engine):
         self.engine = engine
