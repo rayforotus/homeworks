@@ -3,6 +3,7 @@
 Функции и структуры данных
 """
 
+
 def power_numbers(*nums):
     """
     функция, которая принимает N целых чисел,
@@ -20,6 +21,40 @@ ODD = "odd"
 EVEN = "even"
 PRIME = "prime"
 
+
+def get_odd(nums):
+    result = []
+    for num in nums:
+        if num % 2 != 0:
+            result.append(num)
+    return result
+
+
+def get_even(nums):
+    result = []
+    for num in nums:
+        if num % 2 == 0:
+            result.append(num)
+    return result
+
+
+def is_num_prime(check_num):
+    result = True
+    for num in range(2, check_num):
+        if check_num % num == 0:
+            return False
+    return result
+
+
+def get_prime(nums):
+    result = []
+    for num in nums:
+        is_prime = is_num_prime(num)
+        if is_prime:
+            result.append(num)
+    return result
+
+
 def filter_numbers(nums, filter_type):
     """
     функция, которая на вход принимает список из целых чисел,
@@ -30,35 +65,6 @@ def filter_numbers(nums, filter_type):
     >>> filter_numbers([2, 3, 4, 5], EVEN)
     <<< [2, 4]
     """
-    def get_odd(nums):
-        result = []
-        for num in nums:
-            if num % 2 != 0:
-                result.append(num)
-        return result
-    
-    def get_even(nums):
-        result = []
-        for num in nums:
-            if num % 2 == 0:
-                result.append(num)
-        return result
-    
-    def is_num_prime(check_num):
-        result = True
-        for num in range(2, check_num):
-            if check_num % num == 0:
-                result = False
-        return result
-    
-    def get_prime(nums):
-        result = []
-        for num in nums:
-            is_prime = is_num_prime(num)
-            if is_prime:
-                result.append(num)
-        return result
-    
     if filter_type == 'odd':
         return get_odd(nums)
     
