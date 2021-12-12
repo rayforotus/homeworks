@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if users %}
+        <div class="h-75">
+            <table class="table table-bordered table-striped table-sm"  cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th scope="col">**</th>
+                    <th class="th-sm">ФИО</th>
+                    <th class="th-sm">Профессия</th>
+                    <th class="th-sm">Компания</th>
+                    <th class="th-sm">Место жительства</th>
+                    <th class="th-sm">Место пребывания</th>
+                    <th class="th-sm">Пол</th>
+                    <th class="th-sm">E-mail</th>
+                    <th class="th-sm">Имя учетной записи</th>
+                    <th class="th-sm">№ Соц. страхования</th>
+                    <th class="th-sm">Дата рождения</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.job }}</td>
+                        <td>{{ user.company }}</td>
+                        <td>{{ user.address }}</td>
+                        <td>{{ user.residence }}</td>
+                        <td>{{ user.sex }}</td>
+                        <td>{{ user.mail }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.ssn }}</td>
+                        <td>{{ user.birthdate }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+    <form action="/new_user" method="POST">
+        <div class="p-2">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    {% for key in new_user_data %}
+                        <th scope="col">{{ key }}</th>
+                    {% endfor %}
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    {% for key in new_user_data %}
+                        <input type="hidden" name="{{ key }}" value="{{ new_user_data[key] }}"/>
+                        <td>{{ new_user_data[key] }}</td>
+                    {% endfor %}
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+
+            <button type="submit" class="btn btn-primary">Одобрить</button>
+    </form>
+    </div>
+{% endblock %}
