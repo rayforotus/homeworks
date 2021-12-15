@@ -40,6 +40,8 @@ def get_even(nums):
 
 def is_num_prime(check_num):
     result = True
+    if check_num == 0:
+        return False
     for num in range(2, check_num):
         if check_num % num == 0:
             return False
@@ -73,17 +75,20 @@ def filter_numbers(nums, filter_type):
     
     elif filter_type == 'prime':
         return get_prime(nums)
-    
-out_list = power_numbers(1, 2, 5, 7, 9, 6)
-print(out_list)
 
-num_list = [1, 2, 22, 9, 6, 14, 15, 17, 5, 7]
 
-odd_nums = filter_numbers(num_list, ODD)
-print(odd_nums)
+if __name__ == '__main__':
 
-even_list = filter_numbers(num_list, EVEN)
-print(even_list)
+    # out_list = power_numbers(1, 2, 5, 7, 9, 6)
+    # print(out_list)
+    #
+    num_list = [0, 1, 2, 22, 9, 6, 14, 15, 17, 5, 7]
 
-prime_list = filter_numbers(num_list, PRIME)
-print(prime_list)
+    # odd_nums = filter_numbers(num_list, ODD)
+    # print(odd_nums)
+    #
+    # even_list = filter_numbers(num_list, EVEN)
+    # print(even_list)
+
+    prime_list = filter_numbers(num_list, PRIME)
+    print(prime_list)
