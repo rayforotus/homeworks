@@ -1,21 +1,6 @@
 version: '3'
 
 services:
-  homework06:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    environment:
-      CONFIG: DevelopmentConfig
-      SQLALCHEMY_DATABASE_URI: postgresql://user:password@pg/otus
-    restart: on-failure
-    volumes:
-      - ./:/main
-    ports:
-      - "5000:5000"
-    depends_on:
-      - pg
-
   homework06-prod:
     build:
       context: .
@@ -27,6 +12,7 @@ services:
     environment:
       CONFIG: ProductionConfig
       SQLALCHEMY_DATABASE_URI: postgresql://user:password@pg/otus
+    container_name: homework-06-prod
 
 
 
