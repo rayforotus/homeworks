@@ -79,16 +79,16 @@ def filter_numbers(nums, filter_type):
 
 if __name__ == '__main__':
 
-    # out_list = power_numbers(1, 2, 5, 7, 9, 6)
-    # print(out_list)
-    #
+    out_list = power_numbers(1, 2, 5, 7, 9, 6)
+    print(out_list)
+    
     num_list = [0, 1, 2, 22, 9, 6, 14, 15, 17, 5, 7]
 
-    # odd_nums = filter_numbers(num_list, ODD)
-    # print(odd_nums)
-    #
-    # even_list = filter_numbers(num_list, EVEN)
-    # print(even_list)
+    odd_nums = filter_numbers(num_list, ODD)
+    print(odd_nums)
+    
+    even_list = filter_numbers(num_list, EVEN)
+    print(even_list)
 
     prime_list = filter_numbers(num_list, PRIME)
     print(prime_list)
